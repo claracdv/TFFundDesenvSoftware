@@ -1,5 +1,5 @@
 package com.claraVicente.AmigoSuite.Entidades;
 
-public class Orcamento {
-    
+public enum Orcamento {
+    SIMPLES, LUXO;
 }
