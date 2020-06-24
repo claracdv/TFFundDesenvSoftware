@@ -1,5 +1,5 @@
 package com.claraVicente.AmigoSuite.Entidades;
 
-public class StatusCliente {
-    
+public enum StatusCliente {
+    SOLO, CASAL, FAMILIA;
 }

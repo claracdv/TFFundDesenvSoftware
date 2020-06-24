@@ -1,5 +1,5 @@
 package com.claraVicente.AmigoSuite.Entidades;
 
-public class FormaPagamento {
-    
+public enum FormaPagamento {
+    DINHEIRO, CREDITO, DEBITO;
 }

@@ -1,13 +1,18 @@
 package com.claraVicente.AmigoSuite;
 
+import com.claraVicente.AmigoSuite.Entidades.Bairro;
+import com.claraVicente.AmigoSuite.Entidades.Cidade;
+
 /**
- * Hello world!
+ * AmigoSuite
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App{
+    public static void main( String[] args ){
+        Cidade portoAlegre = new Cidade("Porto Alegre");
+        Bairro partenon = new Bairro("Partenon", 100, portoAlegre);
+        Bairro rioBranco = new Bairro("RioBranco", 250, portoAlegre);
+        portoAlegre.adicionaBairro(partenon);
+        portoAlegre.adicionaBairro(rioBranco);
     }
 }
