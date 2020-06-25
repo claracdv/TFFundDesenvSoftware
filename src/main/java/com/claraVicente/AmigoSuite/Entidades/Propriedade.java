@@ -10,13 +10,15 @@ public class Propriedade {
     private Bairro bairro;
     private String cep;
     private String endereco;
+    private double custo;
     private Orcamento classificacao;
     private static int numAvaliacoes;
     private static int avaliacaoMedia;
     private static List<Avaliacao> avaliacoesPropriedade;
 
-    public Propriedade(String id, Cidade cidade, Bairro bairro, String cep, String endereco, Orcamento classificacao) {
+    public Propriedade(String id, int custo, Cidade cidade, Bairro bairro, String cep, String endereco, Orcamento classificacao) {
         this.id = id;
+        this.custo = custo;
         ocupada = false;
         this.cidade = cidade;
         this.bairro = bairro;
@@ -89,6 +91,10 @@ public class Propriedade {
         return numAvaliacoes;
     }
 
+    public double getCusto() {
+        return custo;
+    }
+
     /*********************
     ****** Setters ******
     *********************/
@@ -99,5 +105,9 @@ public class Propriedade {
 
     public void setClassificacao(Orcamento classificacao) {
         this.classificacao = classificacao;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
     }
 }
