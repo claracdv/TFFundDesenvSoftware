@@ -1,8 +1,12 @@
-package com.claraVicente.AmigoSuite.Entidades;
+package test.java.com.claraVicente.AmigoSuite.CasosDeUso;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-public class ClienteTest {
+/**
+ * PoliticaCincoAlugueisTest
+ */
+public class PoliticaCincoAlugueisTest {
+
     
 }
