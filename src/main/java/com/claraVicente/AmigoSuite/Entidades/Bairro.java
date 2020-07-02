@@ -19,6 +19,10 @@ public class Bairro {
         return cidade.getNomeCidade();
     }
 
+    public Cidade getInstanciaCidade(){
+        return cidade;
+    }
+
     public String getNomeBairro() {
         return nomeBairro;
     }

@@ -1,0 +1,53 @@
+
+h1{
+  color:rgb(118, 38, 184); /* rgb(22, 10, 2)*/
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 130px;
+  text-align: right;
+}
+
+input {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+
+body {
+  background-color: rgb(235, 207, 53);
+  /*opacity: 0.3;*/
+}
+
+input:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+button{
+  /*width:400px;*/
+  margin:auto;
+  text-align: center;
+}
+
+#erro{
+color:red;
+}

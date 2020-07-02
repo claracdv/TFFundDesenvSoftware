@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Propriedade {
+    
     private String id;
-    private boolean ocupada;
-    private Cidade cidade;
+    //private boolean ocupada;
     private Bairro bairro;
     private String cep;
     private String endereco;
@@ -17,11 +17,10 @@ public class Propriedade {
     private static int avaliacaoMedia;
     private static List<Avaliacao> avaliacoesPropriedade;
 
-    public Propriedade(String id, double custo, Cidade cidade, Bairro bairro, String cep, String endereco, StatusCliente indicada, Orcamento classificacao) {
+    public Propriedade(String id, double custo, Bairro bairro, String cep, String endereco, StatusCliente indicada, Orcamento classificacao) {
         this.id = id;
         this.custo = custo;
-        ocupada = false;
-        this.cidade = cidade;
+        //ocupada = false;
         this.bairro = bairro;
         this.cep = cep;
         this.endereco = endereco;
@@ -61,12 +60,12 @@ public class Propriedade {
         return id;
     }
 
-    public boolean getOcupada(){
-        return ocupada;
-    }
+    //public boolean getOcupada(){
+    //    return ocupada;
+    //}
 
     public Cidade getCidade() {
-        return cidade;
+        return bairro.getInstanciaCidade();
     }
 
     public Bairro getBairro() {
@@ -97,17 +96,14 @@ public class Propriedade {
         return custo;
     }
 
-    public StatusCliente getOcupada() {
-        return ocupada;
-    }
 
     /*********************
     ****** Setters ******
     *********************/
 
-    public void setOcupada(boolean ocupada) {
-        this.ocupada = ocupada;
-    }
+    //public void setOcupada(boolean ocupada) {
+    //    this.ocupada = ocupada;
+    //}
 
     public void setClassificacao(Orcamento classificacao) {
         this.classificacao = classificacao;

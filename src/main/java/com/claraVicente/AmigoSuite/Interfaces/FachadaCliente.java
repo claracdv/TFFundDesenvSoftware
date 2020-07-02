@@ -1,8 +1,9 @@
 package com.claraVicente.AmigoSuite.Interfaces;
 
-import com.claraVicente.AmigoSuite.Entidades.Cliente;
+import java.util.Map;
+
 import com.claraVicente.AmigoSuite.Entidades.Propriedade;
-import com.claraVicente.AmigoSuite.CasosDeUso.ServicoPagamento;
+import com.claraVicente.AmigoSuite.CasosDeUso.ServicoConsultaPropriedade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,28 +13,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/consulta_aluno")
+@RequestMapping("/consulta_propriedade")
 public class FachadaCliente {
-    private ServicoPagamento servicoPagamento;
+    private ServicoConsultaPropriedade sConsultaPropriedade;
+
 
     @Autowired
-	public FachadaCliente(ServicoPagamento servicoPagamento) {
-		this.servicoPagamento = servicoPagamento;
+	public FachadaCliente(ServicoConsultaPropriedade sConsultaPropriedade){
+		this.sConsultaPropriedade = sConsultaPropriedade;
 	}
     
     @CrossOrigin(origins = "*")//"http://localhost")
-    @GetMapping("/dadospropriedade")
-    public Propriedade getDadosPropriedade(@RequestParam Cliente cliente, @RequestParam Propriedade propriedade){
+    @GetMapping("/dados_propriedade")
+    public Propriedade getDadosPropriedade(@RequestParam String id){
         // Se o método lançar exceção o SpringBoot gera resposta automática
-        // então getDadosAluno deve lançar exceção, não retornar null
-        
+        // então getDadosPropriedade deve lançar exceção, não retornar null
+        Propriedade propriedade = sConsultaPropriedade.getDadosPropriedade(id);
         return propriedade;
     }
    
-    @CrossOrigin(origins = "*") 
-    @GetMapping("/pagamento")
-    public double getPagamento(@RequestParam Cliente cliente, @RequestParam Propriedade propriedade){
-        double custo = servicoPagamento.calculaPagamento(cliente, propriedade);
-        return custo;
-    }
+    @CrossOrigin(origins = "*")//"http://localhost")
+    @GetMapping("/todas_propriedades")
+    public Map<String, Propriedade> getListaPropriedades(){
+        // Se o método lançar exceção o SpringBoot gera resposta automática
+        // então getDadosAluno deve lançar exceção, não retornar null
+        Map<String, Propriedade> propriedades = sConsultaPropriedade.getListaDePropriedades();
+        return propriedades;
+    }  
 }

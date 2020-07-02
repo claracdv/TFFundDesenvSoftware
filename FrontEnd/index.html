@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> AmigoSuite </title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="mainPage">
+    <h1>AmigoSuite</h1>
+      <ul>
+        <li>
+          <label for="cliente">Cliente: </label>
+          <input type="text" id="cliente" name="cliente">
+        </li>
+        <li>
+          <label for="propriedade">Propriedade: </label>
+          <input type="text" id="id" name="propriedade">
+        </li>
+        <li>
+          <label id="cidade">Cidade: </label>
+          <span id="nomeCidade"> - </span>
+        </li>
+        <li>
+          <label id="bairro">Bairro: </label>
+          <span id="nomeBairro"> - </span>
+        </li>
+        <li>
+          <label id="endereco">Endereço: </label>
+          <span id="enderecoPropriedade"> - </span>
+        </li>
+        <li>
+          <label id="cep">CEP: </label>
+          <span id="cepPropriedade"> - </span>
+        </li>
+        <li>
+          <label id="tipoOrcamento">Simples ou luxo: </label>
+          <span id="orcamentoPropriedade"> - </span>
+        </li>
+        <li>
+          <label id="statusIndicado">Indicado para: </label>
+          <span id="statusIndicadoPropriedade"> - </span>
+        </li>
+        <li>
+          <button id="btConsultarDados">Consultar Dados da Propriedade</button>
+          <span id="erro"></span>
+          <br>
+          <button id="btPagar">Realizar Pagamento para Essa Propriedade</button>
+          <span id="pagar"> - </span>
+          <!--
+          <br>
+          <label id="json">JSON:</label>
+          <span id="jsonValor"> - </span>
+          -->
+        </li>
+      </ul>
+    
+    <script type="text/javascript" src=".\script.js"></script>
+  </div>
+</body>
+
+</html>
