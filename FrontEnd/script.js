@@ -1,17 +1,6 @@
-function exibeInformacoesValoresPropriedade(){
-    let total = document.getElementById("total");
-    total.innerHTML = "Preço Bruto: R$ " + cart.subTotal;
-    let totalDesconto = document.getElementById("desconto");
-    totalDesconto.innerHTML = "Desconto: R$ " + cart.desconto;
-    let ICMS = document.getElementById("ICMS");
-    ICMS.innerHTML = "ICMS: R$ " + cart.ICMS;
-    let entrega = document.getElementById("entrega");
-    entrega.innerHTML = "Entrega: R$ " + cart.taxaEntrega;
-    let ISSQN = document.getElementById("ISSQN");
-    ISSQN.innerHTML = "ISSQN: R$ " + cart.ISSQN;
-    let final = document.getElementById("final");
-    final.innerHTML = "Valor Final: R$ " + cart.totalPagar;
-  }
+function realizaPagamento() {
+    alert("Pagamento realizado!");
+}
 
 async function consultaDadosPropriedade(idPropriedade) {
     //console.log(matricula);
@@ -137,6 +126,12 @@ document.getElementById("btConsultarDadosCliente").onclick = async function () {
     
         let cidadeC = document.getElementById("cidadeCliente");
         cidadeC.innerHTML = resposta.cidadeCliente;
+
+        let descontoC = document.getElementById("desconto");
+        descontoC.innerHTML = resposta.desconto;
+
+        let custoTotalP = document.getElementById("custoTotal");
+        custoTotalP.innerHTML = resposta.custoTotal;
     
     
         erro = document.getElementById("erro");
@@ -166,23 +161,11 @@ document.getElementById("btConsultarDadosCliente").onclick = async function () {
             erro.innerHTML = "Erro na consulta dos dados";
         }
 
-        /*
-    document.getElementById("btAprovacao").onclick = async function () {
-        matricula = document.getElementById("matricula").value;
-        let resposta = await consultaAprovacao(matricula);
-        if (resposta != null){
-            let aprovacao = document.getElementById("aprovacao");
-            if (resposta == true){
-                aprovacao.innerHTML = "Aluno matricula: "+matricula+", APROVADO";
-            }else{
-                aprovacao.innerHTML = "Aluno matricula: "+matricula+", REPROVADO";
-            }
-            erro = document.getElementById("erro");
-            erro.innerHTML = " - ";
-        }else{
-            erro = document.getElementById("erro");
-            erro.innerHTML = "Erro na consulta da aprovacao";
-        }  
-    }  
-    */
+        let butCheckout = document.getElementById("butCheckout");
+        butCheckout.onclick = checkout;
+}
+
+document.getElementById("btPagar").onclick = async function (){
+    let butCheckout = document.getElementById("btPagar");
+        butCheckout.onclick = realizaPagamento;
 }

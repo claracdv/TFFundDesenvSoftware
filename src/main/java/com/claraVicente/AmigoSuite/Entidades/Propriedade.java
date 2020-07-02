@@ -3,6 +3,9 @@ package com.claraVicente.AmigoSuite.Entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Propriedade {
     
     private String id;
@@ -16,6 +19,7 @@ public class Propriedade {
     private static int numAvaliacoes;
     private static int avaliacaoMedia;
     private static List<Avaliacao> avaliacoesPropriedade;
+    private String dataHoje; 
 
     public Propriedade(String id, double custo, Bairro bairro, String cep, String endereco, StatusCliente indicadaPara, Orcamento orcamentoIndicado) {
         this.id = id;
@@ -29,6 +33,9 @@ public class Propriedade {
         numAvaliacoes = 0;
         avaliacaoMedia = 0;
         avaliacoesPropriedade = new ArrayList<>();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM");
+        Date date = new Date();
+        this.dataHoje = formatter.format(date);
     }
 
     public static boolean adicionaAvaliacao(Avaliacao avaliacao) {
@@ -110,7 +117,7 @@ public class Propriedade {
         return bairro.getCustoBasico();
     }
 
-
+    
     /*********************
     ****** Setters ******
     *********************/
