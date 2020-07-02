@@ -106,6 +106,10 @@ public class Propriedade {
         return custo;
     }
 
+    public double getCustoBairro(){
+        return bairro.getCustoBasico();
+    }
+
 
     /*********************
     ****** Setters ******
@@ -121,5 +125,10 @@ public class Propriedade {
 
     public void setCusto(double custo) {
         this.custo = custo;
+    }
+
+    @Override
+    public String toString() {
+        return ("ID: " + this.id + ", Cidade: " + this.getCidade() + ", Custo " + this.custo);
     }
 }

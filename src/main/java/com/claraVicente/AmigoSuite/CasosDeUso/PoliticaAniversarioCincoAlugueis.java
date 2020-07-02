@@ -13,6 +13,12 @@ public class PoliticaAniversarioCincoAlugueis implements PoliticaPagamento{
         
         custo = custo * 0.75;
     
+        zeraNumAluguel(cliente);
+
         return custo;
+    }
+
+    private void zeraNumAluguel(Cliente cliente){
+        cliente.setNumAlugueis(0);
     }
 }

@@ -1,3 +1,17 @@
+function exibeInformacoesValoresPropriedade(){
+    let total = document.getElementById("total");
+    total.innerHTML = "Preço Bruto: R$ " + cart.subTotal;
+    let totalDesconto = document.getElementById("desconto");
+    totalDesconto.innerHTML = "Desconto: R$ " + cart.desconto;
+    let ICMS = document.getElementById("ICMS");
+    ICMS.innerHTML = "ICMS: R$ " + cart.ICMS;
+    let entrega = document.getElementById("entrega");
+    entrega.innerHTML = "Entrega: R$ " + cart.taxaEntrega;
+    let ISSQN = document.getElementById("ISSQN");
+    ISSQN.innerHTML = "ISSQN: R$ " + cart.ISSQN;
+    let final = document.getElementById("final");
+    final.innerHTML = "Valor Final: R$ " + cart.totalPagar;
+  }
 
 async function consultaDadosPropriedade(idPropriedade) {
     //console.log(matricula);
@@ -43,54 +57,6 @@ async function consultaDadosCliente(cpf) {
     }
 }
 
-/*
-// Consulta os dados do aluno
-async function consultaDadosAluno(matricula) {
-    //console.log(matricula);
-
-    let url = "http://localhost:8080/consulta_aluno/dadosaluno";
-    url = url + "?matricula="+matricula;
-
-    try{
-        let resposta = await fetch(url);
-        //console.log(resposta);
-        if (resposta.ok){
-            let dados = await resposta.json();
-            //console.log(dados);
-            return dados;
-        }else{
-            //console.log(resposta.status+", text="+resposta.statusText);
-            return null;
-        }
-    }catch(erro){
-        console.log(erro);
-    }
-}
-*/
-
-/*
-// Consulta aprovação do aluno
-async function consultaAprovacao(matricula) {
-    let url = "http://localhost:8080/consulta_aluno/aprovacao";
-    url = url + "?matricula="+matricula;
-
-    try{
-        let resposta = await fetch(url);
-        console.log(resposta);
-        if (resposta.ok){
-            let dados = await resposta.json();
-            console.log(dados);
-            return dados;
-        }else{
-            console.log(resposta.status+", text="+resposta.statusText);
-            return null;
-        }
-    }catch(erro){
-        console.log(erro);
-    }
-}
-
-*/
 
 // --- início do programa
 document.getElementById("btConsultarDadosPropriedade").onclick = async function () {
@@ -116,8 +82,11 @@ document.getElementById("btConsultarDadosPropriedade").onclick = async function 
         let indicadoPara = document.getElementById("statusIndicadoPropriedade");
         indicadoPara.innerHTML = resposta.indicadaPara;
 
-        let custo = document.getElementById("custoPropriedade");
-        custo.innerHTML = resposta.custo;
+        let custoPropriedade = document.getElementById("custoProp");
+        custoPropriedade.innerHTML = resposta.custo;
+
+        let custoBairroProp = document.getElementById("custoBairro");
+        custoBairroProp.innerHTML = resposta.custoBairro;
 
         let ocupada = document.getElementById("propriedadeOcupada");
         ocupada.innerHTML = resposta.ocupada;

@@ -22,7 +22,7 @@ public class RepositorioClientes implements InterfaceRepositorioClientes{
         Cidade restingaSeca = new Cidade("Restinga Seca");
         Cidade curitiba = new Cidade("Curitiba");
 
-        Cliente c1 = new Cliente("1", "23/07/2000",FormaPagamento.DINHEIRO, StatusCliente.FAMILIA, Orcamento.SIMPLES, portoAlegre);
+        Cliente c1 = new Cliente("1", "02/07/2000",FormaPagamento.DINHEIRO, StatusCliente.FAMILIA, Orcamento.SIMPLES, portoAlegre);
         Cliente c2 = new Cliente("2", "12/11/1967",FormaPagamento.DEBITO, StatusCliente.FAMILIA, Orcamento.LUXO, cacavapaDoSul);
         Cliente c3 = new Cliente("3", "08/03/1993",FormaPagamento.CREDITO, StatusCliente.CASAL, Orcamento.SIMPLES, cacavapaDoSul);
         Cliente c4 = new Cliente("4", "16/09/1945",FormaPagamento.DINHEIRO, StatusCliente.SOLO, Orcamento.LUXO, rioDeJaneiro);

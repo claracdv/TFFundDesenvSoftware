@@ -11,6 +11,12 @@ public class PoliticaClassica implements PoliticaPagamento{
         double custoPropriedade = propriedade.getCusto();
         double custo = custoBasicoBairro + custoPropriedade;
     
+        incrementaNumAluguel(cliente);
+
         return custo;
+    }
+
+    private void incrementaNumAluguel(Cliente cliente){
+        cliente.setNumAlugueis(cliente.getNumAlugueis()+1);
     }
 }

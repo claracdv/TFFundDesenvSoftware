@@ -12,7 +12,13 @@ public class PoliticaAniversario implements PoliticaPagamento{
         double custo = custoBasicoBairro + custoPropriedade;
         
         custo = custo * 0.85;
-    
+        
+        incrementaNumAluguel(cliente);
+
         return custo;
+    }
+
+    private void incrementaNumAluguel(Cliente cliente){
+        cliente.setNumAlugueis(cliente.getNumAlugueis()+1);
     }
 }

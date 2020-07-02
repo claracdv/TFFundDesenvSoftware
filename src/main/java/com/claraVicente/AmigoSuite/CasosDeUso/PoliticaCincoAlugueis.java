@@ -12,7 +12,13 @@ public class PoliticaCincoAlugueis implements PoliticaPagamento{
         double custo = custoBasicoBairro + custoPropriedade;
         
         custo = custo * 0.9;
-    
+        
+        zeraNumAluguel(cliente);
+
         return custo;
+    }
+
+    private void zeraNumAluguel(Cliente cliente){
+        cliente.setNumAlugueis(0);
     }
 }
