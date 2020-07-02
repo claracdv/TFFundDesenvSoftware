@@ -3,14 +3,14 @@ package com.claraVicente.AmigoSuite.Interfaces;
 import java.util.Map;
 import java.util.HashMap;
 
-import com.claraVicente.AmigoSuite.CasosDeUso.InterfaceRepositorioMestre;
+import com.claraVicente.AmigoSuite.CasosDeUso.InterfaceRepositorioPropriedades;
 import com.claraVicente.AmigoSuite.Entidades.*;
 
 import org.springframework.stereotype.Repository;
 
 //@Component
 @Repository
-public class RepositorioMestre implements InterfaceRepositorioMestre{
+public class RepositorioPropriedades implements InterfaceRepositorioPropriedades{
 
     @Override
     public Map<String,Propriedade> adicionaDados() {

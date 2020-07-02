@@ -6,26 +6,26 @@ import java.util.List;
 public class Propriedade {
     
     private String id;
-    //private boolean ocupada;
+    private boolean ocupada;
     private Bairro bairro;
     private String cep;
     private String endereco;
     private double custo;
-    private StatusCliente indicada;
-    private Orcamento classificacao;
+    private StatusCliente indicadaPara;
+    private Orcamento orcamentoIndicado;
     private static int numAvaliacoes;
     private static int avaliacaoMedia;
     private static List<Avaliacao> avaliacoesPropriedade;
 
-    public Propriedade(String id, double custo, Bairro bairro, String cep, String endereco, StatusCliente indicada, Orcamento classificacao) {
+    public Propriedade(String id, double custo, Bairro bairro, String cep, String endereco, StatusCliente indicadaPara, Orcamento orcamentoIndicado) {
         this.id = id;
         this.custo = custo;
-        //ocupada = false;
+        ocupada = false;
         this.bairro = bairro;
         this.cep = cep;
         this.endereco = endereco;
-        this.indicada = indicada;
-        this.classificacao = classificacao;
+        this.indicadaPara = indicadaPara;
+        this.orcamentoIndicado = orcamentoIndicado;
         numAvaliacoes = 0;
         avaliacaoMedia = 0;
         avaliacoesPropriedade = new ArrayList<>();
@@ -60,15 +60,21 @@ public class Propriedade {
         return id;
     }
 
-    //public boolean getOcupada(){
-    //    return ocupada;
-    //}
-
-    public Cidade getCidade() {
-        return bairro.getInstanciaCidade();
+    public String getOcupada(){
+        if (ocupada == true)
+            return "Ocupado";
+        return "Disponivel";
     }
 
-    public Bairro getBairro() {
+    public String getCidade() {
+        return bairro.getInstanciaCidade().getNomeCidade();
+    }
+
+    public String getBairro() {
+        return bairro.getNomeBairro();
+    }
+
+    public Bairro getInstanciaBairro(){
         return bairro;
     }
 
@@ -80,8 +86,12 @@ public class Propriedade {
         return endereco;
     }
 
-    public Orcamento getClassificacao() {
-        return classificacao;
+    public String getOrcamentoIndicado() {
+        return orcamentoIndicado.toString();
+    }
+
+    public String getIndicadaPara() {
+        return indicadaPara.toString();
     }
 
     public int getAvaliacaoMedia() {
@@ -105,8 +115,8 @@ public class Propriedade {
     //    this.ocupada = ocupada;
     //}
 
-    public void setClassificacao(Orcamento classificacao) {
-        this.classificacao = classificacao;
+    public void setOrcamentoIndicado(Orcamento orcamentoIndicado) {
+        this.orcamentoIndicado = orcamentoIndicado;
     }
 
     public void setCusto(double custo) {

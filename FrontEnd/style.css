@@ -14,7 +14,7 @@ ul {
 label {
   /* Uniform size & alignment */
   display: inline-block;
-  width: 130px;
+  width: 200px;
   text-align: right;
 }
 
@@ -44,7 +44,7 @@ input:focus {
 
 button{
   /*width:400px;*/
-  margin:auto;
+  margin: auto;
   text-align: center;
 }
 

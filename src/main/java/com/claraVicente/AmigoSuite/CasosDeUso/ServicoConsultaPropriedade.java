@@ -3,18 +3,18 @@ package com.claraVicente.AmigoSuite.CasosDeUso;
 import java.util.Map;
 
 import com.claraVicente.AmigoSuite.Entidades.Propriedade;
-import com.claraVicente.AmigoSuite.Interfaces.RepositorioMestre;
+import com.claraVicente.AmigoSuite.Interfaces.RepositorioPropriedades;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ServicoConsultaPropriedade {
-    private RepositorioMestre repoPropriedades;
+    private RepositorioPropriedades repoPropriedades;
     //private Propriedade propriedade;
 
     @Autowired
-    public ServicoConsultaPropriedade(RepositorioMestre repoPropriedades){
+    public ServicoConsultaPropriedade(RepositorioPropriedades repoPropriedades){
         this.repoPropriedades = repoPropriedades;
         //propriedade = null;
     }

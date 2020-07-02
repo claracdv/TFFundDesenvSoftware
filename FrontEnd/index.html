@@ -12,12 +12,8 @@
     <h1>AmigoSuite</h1>
       <ul>
         <li>
-          <label for="cliente">Cliente: </label>
-          <input type="text" id="cliente" name="cliente">
-        </li>
-        <li>
           <label for="propriedade">Propriedade: </label>
-          <input type="text" id="id" name="propriedade">
+          <input type="text" id="idPropriedade" name="propriedade">
         </li>
         <li>
           <label id="cidade">Cidade: </label>
@@ -44,20 +40,69 @@
           <span id="statusIndicadoPropriedade"> - </span>
         </li>
         <li>
-          <button id="btConsultarDados">Consultar Dados da Propriedade</button>
+          <label id="custo">Custo: </label>
+          <span id="custoPropriedade"> - </span>
+        </li>
+        <li>
+          <label id="ocupada">Situação da propriedade: </label>
+          <span id="propriedadeOcupada"> - </span>
+        </li>
+        <li>
+          <button id="btConsultarDadosPropriedade">Consultar Dados da Propriedade</button>
           <span id="erro"></span>
-          <br>
-          <button id="btPagar">Realizar Pagamento para Essa Propriedade</button>
-          <span id="pagar"> - </span>
+
           <!--
           <br>
           <label id="json">JSON:</label>
           <span id="jsonValor"> - </span>
           -->
         </li>
+     </ul>
+     
+     <ul>
+      <li>
+        <label for="cliente">Cliente: </label>
+        <input type="text" id="cpf" name="cliente">
+      </li>
+      <li>
+        <label id="dataNascimento">Data de Nascimento: </label>
+        <span id="dataNascimentoCliente"> - </span>
+      </li>
+      <li>
+        <label id="numAlugueis">Numero de Alugueis: </label>
+        <span id="numAlugueisCliente"> - </span>
+      </li>
+      <li>
+        <label id="formaPagamento">Forma de Pagamento: </label>
+        <span id="formaPagamentoCliente"> - </span>
+      </li>
+      <li>
+        <label id="orcamentoC">Orcamento: </label>
+        <span id="orcamentoCliente"> - </span>
+      </li>
+      <li>
+        <label id="statusC">Status: </label>
+        <span id="statusCliente"> - </span>
+      </li>
+      <li>
+        <label id="cidadeC">Cidade: </label>
+        <span id="cidadeCliente"> - </span>
+      </li>
+      
+      <li>
+        <button id="btConsultarDadosCliente">Consultar Dados do Cliente</button>
+        <span id="erro"></span>
+        
+        <button id="btPagar">Realizar Pagamento para Essa Propriedade</button>
+        <span id="pagar"> - </span>
+        <!--
+        <br>
+        <label id="json">JSON:</label>
+        <span id="jsonValor"> - </span>
+        -->
+      </li>
       </ul>
-    
-    <script type="text/javascript" src=".\script.js"></script>
+    <script type="text/javascript" src="script.js"></script> <!-- src=".\script.js"-->
   </div>
 </body>
 

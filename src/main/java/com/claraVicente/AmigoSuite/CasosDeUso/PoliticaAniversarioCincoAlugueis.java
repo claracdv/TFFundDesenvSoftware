@@ -7,7 +7,7 @@ public class PoliticaAniversarioCincoAlugueis implements PoliticaPagamento{
     
     @Override
     public double calculaPagamento(Cliente cliente, Propriedade propriedade){
-        double custoBasicoBairro = propriedade.getBairro().getCustoBasico();
+        double custoBasicoBairro = propriedade.getInstanciaBairro().getCustoBasico();
         double custoPropriedade = propriedade.getCusto();
         double custo = custoBasicoBairro + custoPropriedade;
         

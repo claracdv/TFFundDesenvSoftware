@@ -12,19 +12,7 @@ public class Cliente {
     private Orcamento orcamento;  
     private Cidade cidadeCliente;
     private static Set<Avaliacao> avaliacoesCliente;
-    
 
-    /**
-     * Construtor de cliente.
-     * 
-     * @param cpf
-     * @param dataNascimento
-     * @param numAlugueis
-     * @param formaPagamento
-     * @param statusCliente
-     * @param orcamento
-     * @param cidadeCliente
-     */
     public Cliente(String cpf, String dataNascimento, FormaPagamento formaPagamento, StatusCliente statusCliente, Orcamento orcamento, Cidade cidadeCliente){
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -36,15 +24,6 @@ public class Cliente {
         avaliacoesCliente = new HashSet<>();
     }
 
-    /**
-     * Realiza uma avaliacao e calcula a media dos parametros.
-     * 
-     * @param propriedade
-     * @param limpeza
-     * @param custoBeneficio
-     * @param experienciaGeral
-     * @return
-     */
     public boolean fazerAvaliacao(Propriedade propriedade, int limpeza, int custoBeneficio, int experienciaGeral){
         Avaliacao avaliacao = new Avaliacao(propriedade, limpeza, custoBeneficio, experienciaGeral);
         avaliacoesCliente.add(avaliacao);
@@ -70,20 +49,20 @@ public class Cliente {
         return numAlugueis;
     }
 
-    public FormaPagamento getFormaPagamento() {
-        return formaPagamento;
+    public String getFormaPagamento() {
+        return formaPagamento.toString();
     }
 
-    public StatusCliente getStatusCliente() {
-        return statusCliente;
+    public String getStatusCliente() {
+        return statusCliente.toString();
     }
 
-    public Orcamento getOrcamento() {
-        return orcamento;
+    public String getOrcamento() {
+        return orcamento.toString();
     }
 
-    public Cidade getCidadeCliente() {
-        return cidadeCliente;
+    public String getCidadeCliente() {
+        return cidadeCliente.getNomeCidade();
     }
 
     /*********************

@@ -2,8 +2,8 @@ package com.claraVicente.AmigoSuite.Interfaces;
 
 import java.util.Map;
 
-import com.claraVicente.AmigoSuite.Entidades.Cliente;
-import com.claraVicente.AmigoSuite.CasosDeUso.ServicoConsultaCliente;
+import com.claraVicente.AmigoSuite.Entidades.Propriedade;
+import com.claraVicente.AmigoSuite.CasosDeUso.ServicoConsultaPropriedade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,31 +13,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/consulta_cliente")
-public class FachadaCliente {
-    private ServicoConsultaCliente sConsultaCliente;
+@RequestMapping("/consulta_propriedade")
+public class FachadaPropriedade {
+    private ServicoConsultaPropriedade sConsultaPropriedade;
 
 
     @Autowired
-	public FachadaCliente(ServicoConsultaCliente sConsultaCliente){
-		this.sConsultaCliente = sConsultaCliente;
+	public FachadaPropriedade(ServicoConsultaPropriedade sConsultaPropriedade){
+		this.sConsultaPropriedade = sConsultaPropriedade;
 	}
     
     @CrossOrigin(origins = "*")//"http://localhost")
-    @GetMapping("/dadoscliente")
-    public Cliente getDadosPropriedade(@RequestParam String cpf){
+    @GetMapping("/dadospropriedade")
+    public Propriedade getDadosPropriedade(@RequestParam String id){
         // Se o método lançar exceção o SpringBoot gera resposta automática
         // então getDadosPropriedade deve lançar exceção, não retornar null
-        Cliente cliente = sConsultaCliente.getDadosCliente(cpf);
-        return cliente;
+        Propriedade propriedade = sConsultaPropriedade.getDadosPropriedade(id);
+        return propriedade;
     }
    
     @CrossOrigin(origins = "*")//"http://localhost")
-    @GetMapping("/todosclientes")
-    public Map<String, Cliente> getListaClientes(){
+    @GetMapping("/todaspropriedades")
+    public Map<String, Propriedade> getListaPropriedades(){
         // Se o método lançar exceção o SpringBoot gera resposta automática
         // então getDadosAluno deve lançar exceção, não retornar null
-        Map<String, Cliente> clientes = sConsultaCliente.getListaDeClientes();
-        return clientes;
+        Map<String, Propriedade> propriedades = sConsultaPropriedade.getListaDePropriedades();
+        return propriedades;
     }  
 }
